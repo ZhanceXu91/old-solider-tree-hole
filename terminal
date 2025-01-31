@@ -1,30 +1,22 @@
-# 安装 Vue CLI
-npm install -g @vue/cli
+# 创建React项目
+npx create-next-app@latest honey-chat --typescript --tailwind --eslint
 
-# 创建前端项目
-vue create honey-chat
+# 进入项目目录
 cd honey-chat
 
-# 安装所需依赖
-npm install vue-router vuex axios element-ui socket.io-client
+# 安装shadcn-ui
+npx shadcn-ui@latest init
 
-# 创建后端目录
+# 安装必要依赖
+npm install @tanstack/react-query axios socket.io-client zustand 
+
 mkdir server
+cd server
+npm init -y
+npm install express cors socket.io mongoose dotenv
+npm install --save-dev typescript @types/node @types/express @types/cors @types/socket.io
+npm install --save-dev ts-node-dev 
 
-# 创建资源目录
-mkdir -p src/assets
-
-# 下载示例 logo（如果 curl 命令不可用，可以手动下载一个图片放到 src/assets/logo.png）
-curl https://via.placeholder.com/200x50.png > src/assets/logo.png
-
-# 启动开发服务器
-npm run serve 
-
-# 测试 API 连接
-curl http://localhost:8080/api/companions 
-
-# 查看运行中的 Node 进程
-ps aux | grep node
-
-# 查看 8080 端口占用情况
-lsof -i :8080 
+npm run dev 
+npm run build
+npm start 
