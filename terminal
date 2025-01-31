@@ -1,0 +1,30 @@
+# 安装 Vue CLI
+npm install -g @vue/cli
+
+# 创建前端项目
+vue create honey-chat
+cd honey-chat
+
+# 安装所需依赖
+npm install vue-router vuex axios element-ui socket.io-client
+
+# 创建后端目录
+mkdir server
+
+# 创建资源目录
+mkdir -p src/assets
+
+# 下载示例 logo（如果 curl 命令不可用，可以手动下载一个图片放到 src/assets/logo.png）
+curl https://via.placeholder.com/200x50.png > src/assets/logo.png
+
+# 启动开发服务器
+npm run serve 
+
+# 测试 API 连接
+curl http://localhost:8080/api/companions 
+
+# 查看运行中的 Node 进程
+ps aux | grep node
+
+# 查看 8080 端口占用情况
+lsof -i :8080 
